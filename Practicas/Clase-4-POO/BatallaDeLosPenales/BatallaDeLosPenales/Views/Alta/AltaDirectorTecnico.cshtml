@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Agregar un Director Tecnico:</h1>
+
+<form action="/Alta/AltaDirectorTecnico" method="post">
+
+    <div>
+        Nombre Usuario:
+        <input type="text" name="NombreUsuario" />
+    </div>
+
+    <div>
+        Agregar arquero:
+        <select name="Arquero">
+
+            @foreach (var Arquero in ViewBag.Arqueros)
+            {
+                <option value="@Arquero.Id" selected>@Arquero.Nombre @Arquero.Apellido</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        Agregar delantero 1:
+        <select name="Delantero1">
+
+            @foreach (var Delantero in ViewBag.Delanteros)
+            {
+                <option value="@Delantero.Id" selected>@Delantero.Nombre @Delantero.Apellido</option>
+            }
+        </select>
+
+    </div>
+
+    <div>
+
+        Agregar delantero 2:
+        <select name="Delantero2">
+
+            @foreach (var Delantero in ViewBag.Delanteros)
+            {
+                <option value="@Delantero.Id" selected>@Delantero.Nombre @Delantero.Apellido</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <input type="submit" value="Crear Dt" />
+
+    </div>
+
+</form>

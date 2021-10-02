@@ -1,4 +1,6 @@
-﻿using BatallaDeLosPenales.Models;
+﻿using BatallaDeLosPenales.Servicios.Entidades;
+using BatallaDeLosPenales.Servicios.Servicios;
+using BatallaDeLosPenales.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -26,6 +28,20 @@ namespace BatallaDeLosPenales.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult ListaDt()
+        {
+
+            return View(DirectorTecnicoServicio.ObtenerTodos().OrderBy(o => o.NombreUsuario).ToList());
+
+        }
+
+        public IActionResult GanadorBatalla()
+        {
+
+            return View(DirectorTecnicoServicio.ObtenerTecnicosMayorPuntaje());
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -11,7 +11,7 @@ namespace BatallaDeLosPenales.Servicios.Entidades
         public string NombreUsuario { get; }
         private List<Jugador> Jugadores { get; }
 
-        public int Puntos => Jugadores.Sum(jug=> jug.Puntos);
+        public int Puntos => Jugadores.Sum(jug => jug.Puntos);
 
         public DirectorTecnico()
         {
@@ -21,12 +21,13 @@ namespace BatallaDeLosPenales.Servicios.Entidades
         {
             NombreUsuario = nombreUsuario;
             Jugadores = jugadores;
+
         }
 
         public List<Jugador> ObtenerJugadores()
         {
             return Jugadores;
         }
-       
+
     }
 }

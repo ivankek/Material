@@ -14,6 +14,7 @@ namespace BatallaDeLosPenales.Servicios.Servicios
         public static void Agregar(T j)
         {
             Lista.Add(j);
+            j.Id = Lista.Max(o => o.Id) + 1;
         }
 
         public static T ObtenerPorId(int id)

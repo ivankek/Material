@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Agregar un arquero:</h1>
+
+<form action="/Alta/AltaDelantero" method="post">
+
+    <div>
+        Nombre:
+        <input type="text" name="Nombre" />
+    </div>
+
+    <div>
+        Apellido:
+        <input type="text" name="Apellido" />
+    </div>
+
+    <div>
+        Expulsado:
+
+        <label>
+            Si
+            <input type="checkbox" name="Expulsado" value="True" />
+        </label>
+        <label>
+            No
+            <input type="checkbox" name="Expulsado" value="False" />
+        </label>
+
+    </div>
+
+    <div>
+
+        <input type="number" name="PenalesConvertidos" />
+
+    </div>
+
+    <div>
+        <input type="submit" value="Crear Delantero" />
+
+    </div>
+
+</form>

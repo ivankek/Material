@@ -1,0 +1,28 @@
+﻿@model List<BatallaDeLosPenales.Servicios.Entidades.DirectorTecnico>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Ganador Batalla:</h1>
+
+<ul>
+
+    @foreach (var Entrenador in Model)
+    {
+        <li>
+            @Entrenador.NombreUsuario @Entrenador.Puntos
+
+            @foreach (var Jugador in Entrenador.ObtenerJugadores())
+            {
+
+                <p>@Jugador.GetType().Name @Jugador.Nombre @Jugador.Apellido @Jugador.Puntos</p>
+
+            }
+
+        </li>
+
+    }
+
+</ul>
