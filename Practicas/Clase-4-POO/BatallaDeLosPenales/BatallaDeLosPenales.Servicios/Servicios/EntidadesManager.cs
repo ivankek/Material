@@ -17,6 +17,11 @@ namespace BatallaDeLosPenales.Servicios.Servicios
             j.Id = Lista.Max(o => o.Id) + 1;
         }
 
+        public static void Eliminar(T j)
+        {
+            Lista.Remove(j);
+        }
+
         public static T ObtenerPorId(int id)
         {
             return Lista.First(j => j.Id == id);
@@ -26,5 +31,7 @@ namespace BatallaDeLosPenales.Servicios.Servicios
         {
             return Lista;
         }
+
+
     }
 }

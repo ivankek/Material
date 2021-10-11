@@ -1,4 +1,5 @@
-﻿using BatallaDeLosPenales.Servicios.Entidades;
+﻿using BatallaDeLosPenales.Models;
+using BatallaDeLosPenales.Servicios.Entidades;
 using BatallaDeLosPenales.Servicios.Servicios;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -68,30 +69,15 @@ namespace BatallaDeLosPenales.Controllers
         public IActionResult AltaDirectorTecnico()
         {
 
+            //ViewBag.Delanteros = DelanteroServicio.ObtenerTodos();
+            //ViewBag.Arqueros = ArqueroServicio.ObtenerTodos();
 
-            //List<Delantero> delanteros = new List<Delantero>()
-            //{
 
-            //    new Delantero(1, "Lionel", "Messi", false, 4),
-            //    new Delantero(2, "Mariano", "Pavone", false, 2),
-            //};
+            List<Arquero> arqueros = ArqueroServicio.ObtenerTodos();
+            List<Delantero> delanteros = DelanteroServicio.ObtenerTodos();
+            ArqueroDelanteroViewModel arqueroDelantero = new ArqueroDelanteroViewModel(arqueros, delanteros);
 
-            //List<Arquero> arqueros = new List<Arquero>()
-            //{
-
-            //   new Arquero(2, "Mariano", "Andujar", false, 2)
-            //};
-
-            //ArqueroServicio.Agregar(arqueros[0]);
-            //DelanteroServicio.Agregar(delanteros[0]);
-            //DelanteroServicio.Agregar(delanteros[1]);
-
-            //ViewBag.Delanteros = delanteros;
-            //ViewBag.Arqueros = arqueros;
-
-            ViewBag.Delanteros = DelanteroServicio.ObtenerTodos();
-            ViewBag.Arqueros = ArqueroServicio.ObtenerTodos();
-            return View();
+            return View(arqueroDelantero);
 
         }
 
@@ -124,6 +110,10 @@ namespace BatallaDeLosPenales.Controllers
             Jugadores.Add(jugador3);
 
             DirectorTecnicoServicio.Agregar(new DirectorTecnico(NombreUsuario, Jugadores));
+
+            ArqueroServicio.Eliminar(ArqueroServicio.ObtenerPorId(Arquero));
+            DelanteroServicio.Eliminar(DelanteroServicio.ObtenerPorId(Delantero1));
+            DelanteroServicio.Eliminar(DelanteroServicio.ObtenerPorId(Delantero2));
 
             return RedirectToAction("ListaDt", "Home");
 

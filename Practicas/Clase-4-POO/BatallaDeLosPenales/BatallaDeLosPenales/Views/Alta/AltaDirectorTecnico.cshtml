@@ -1,4 +1,5 @@
-﻿@*
+﻿@model BatallaDeLosPenales.Models.ArqueroDelanteroViewModel;
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -17,7 +18,7 @@
         Agregar arquero:
         <select name="Arquero">
 
-            @foreach (var Arquero in ViewBag.Arqueros)
+            @foreach (var Arquero in Model.todosLosArqueros)
             {
                 <option value="@Arquero.Id" selected>@Arquero.Nombre @Arquero.Apellido</option>
             }
@@ -28,7 +29,7 @@
         Agregar delantero 1:
         <select name="Delantero1">
 
-            @foreach (var Delantero in ViewBag.Delanteros)
+            @foreach (var Delantero in Model.todosLosDelanteros)
             {
                 <option value="@Delantero.Id" selected>@Delantero.Nombre @Delantero.Apellido</option>
             }
@@ -41,7 +42,7 @@
         Agregar delantero 2:
         <select name="Delantero2">
 
-            @foreach (var Delantero in ViewBag.Delanteros)
+            @foreach (var Delantero in Model.todosLosDelanteros)
             {
                 <option value="@Delantero.Id" selected>@Delantero.Nombre @Delantero.Apellido</option>
             }
