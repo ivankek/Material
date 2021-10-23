@@ -1,0 +1,21 @@
+﻿@model Clase_6_EF.Data.EF.Local
+
+@{
+    ViewData["Title"] = "Agregar Local";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Agregar Local</h1>
+
+    <form action="/local/agregar" method="post">
+        <div>
+            Nombre: <input type="text" name="Nombre" value="" />
+        </div>
+        <div>
+            Direccion: <input type="text" name="Direccion" value="" />
+        </div>
+        <div>
+            <input type="submit" name="Agregar" value="Agregar" />
+        </div>
+    </form> 
+</div>

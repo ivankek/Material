@@ -1,0 +1,28 @@
+﻿@model List<Clase_6_EF.Data.EF.Local>
+
+@{
+    ViewData["Title"] = "Lista de locales";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Locales</h1>
+    @if (ViewBag.Operaciones != null)
+    {
+        <h2>@ViewBag.Operaciones</h2>
+    }
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Operaciones</th>
+        </tr>
+        @foreach (var local in Model)
+        {
+            <tr>
+                <td>@local.Nombre</td>
+                <td>@local.Direccion</td>
+                <td><a href="/local/modificar/@local.IdLocal">Modificar</a> | <a href="/local/borrar/@local.IdLocal">Borrar</a></td>
+            </tr>
+        }
+    </table>
+</div>

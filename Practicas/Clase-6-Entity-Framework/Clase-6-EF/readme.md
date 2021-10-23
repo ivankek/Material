@@ -1,0 +1,1 @@
+Scaffold-DbContext -Connection "Server=.;Database=Db_Tienda;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir EF

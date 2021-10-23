@@ -1,0 +1,22 @@
+﻿@model Clase_6_EF.Data.EF.Local
+
+@{
+    ViewData["Title"] = $"Modificar Local {Model.Nombre}";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Modificar Local @Model.Nombre</h1>
+
+    <form action="/local/modificar" method="post">
+        <input type="hidden" name="IdLocal" value="@Model.IdLocal" />
+        <div>
+            Nombre: <input type="text" name="Nombre" value="@Model.Nombre" />
+        </div>
+        <div>
+            Direccion: <input type="text" name="Direccion" value="@Model.Direccion" />
+        </div>
+        <div>
+            <input type="submit" name="Modificar" value="Modificar" />
+        </div>
+    </form> 
+</div>
