@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Lista de locales";
+    string urlHttp = "http://";
 }
 
 <div class="text-center">
@@ -14,6 +15,8 @@
         <tr>
             <th>Nombre</th>
             <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Url</th>
             <th>Operaciones</th>
         </tr>
         @foreach (var local in Model)
@@ -21,7 +24,10 @@
             <tr>
                 <td>@local.Nombre</td>
                 <td>@local.Direccion</td>
+                <td>@local.Telefono</td>
+                <td><a href="@urlHttp@local.Url">@local.Url</a></td>
                 <td><a href="/local/modificar/@local.IdLocal">Modificar</a> | <a href="/local/borrar/@local.IdLocal">Borrar</a></td>
+
             </tr>
         }
     </table>
