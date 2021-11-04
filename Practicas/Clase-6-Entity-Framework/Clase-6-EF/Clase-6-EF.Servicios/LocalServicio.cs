@@ -4,6 +4,7 @@ using Clase_6_EF.Data.Repositorios.Interfaces;
 using Clase_6_EF.Servicios.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Clase_6_EF.Servicios
 {

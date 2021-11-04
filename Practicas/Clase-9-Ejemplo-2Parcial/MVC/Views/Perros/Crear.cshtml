@@ -1,0 +1,34 @@
+﻿
+@model BD.EF.Perro
+@{
+    Layout = "_HogarDePerrosLayout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Crear Perro</h1>
+
+    <form action="/perros/crear" method="post">
+        <div>
+            Nombre: <input type="text" name="Nombre" value="" />
+        </div>
+        <div>
+            Edad: <input type="text" name="Edad" value="" />
+        </div>
+        <div>
+            <select name="IdRaza">
+                @foreach (BD.EF.Raza raza in ViewBag.Razas)
+                {
+                    <option value="@raza.IdRaza">@raza.Nombre</option>
+                }
+            </select>
+            Otra Raza: <input name="otraRaza" type="text" />
+        </div>
+
+        <div>
+            <input type="submit" name="Agregar" value="Agregar" />
+        </div>
+    </form>
+</div>
+
+
+
